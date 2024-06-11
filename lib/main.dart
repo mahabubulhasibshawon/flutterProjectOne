@@ -29,8 +29,19 @@ class HomeActivity extends StatelessWidget{
     );
   }
 
+
+
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+        padding: EdgeInsets.all(25),
+        backgroundColor: Colors.orangeAccent,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20))
+        )
+
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter App"),
@@ -108,11 +119,12 @@ class HomeActivity extends StatelessWidget{
       body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(height: 100, width: 100, child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuxQ0_GzuJD5UEoe5n641lIZwxFOcmUBs4jQ&s")),
-          Container(height: 100, width: 100, child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuxQ0_GzuJD5UEoe5n641lIZwxFOcmUBs4jQ&s")),
-          Container(height: 100, width: 100, child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuxQ0_GzuJD5UEoe5n641lIZwxFOcmUBs4jQ&s"))
-        ],
+            TextButton(onPressed: (){MySnackBar("Button clicked", context);}, child: Text("Button")),
+            ElevatedButton(onPressed: (){MySnackBar("Elevated btn", context);}, child: Text("Elv btn"),style: buttonStyle,),
+            OutlinedButton(onPressed: (){MySnackBar("outltined btn", context);}, child: Text("Out btn"),style: buttonStyle,)
+          ],
       ),
+      
     );
   }
   
