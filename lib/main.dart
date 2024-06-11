@@ -93,7 +93,22 @@ class HomeActivity extends StatelessWidget{
           ],
         ),
       ),
-      body: Text("Hello Flutter!!!")
+      body: Container(
+        height: 250,
+        width: 250,
+        alignment: Alignment.center,
+        margin: EdgeInsets.all(30),
+        padding: EdgeInsets.all(40),
+        child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuxQ0_GzuJD5UEoe5n641lIZwxFOcmUBs4jQ&s"),
+        decoration: BoxDecoration(
+          color: Colors.blue,
+              border: Border.all(color: Colors.black54, width: 5)
+        ),
+      )
+      // body: Row(
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //
+      // ),
     );
   }
   
